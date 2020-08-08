@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
   rabbitmq:
     image: rabbitmq
@@ -7,7 +7,6 @@ services:
     - 5672:5672
   ipfs:
     image: ipfs/go-ipfs:latest
-    hostname: ipfs
     container_name: ipfs
     volumes:
     - "./export:/export"
@@ -28,3 +27,21 @@ services:
     - "5005:5005"
     depends_on: 
     - rabbitmq
+  blockchain:
+    container_name: blockchain
+    build: ./shinedme-node
+    ports:
+      - "9944:9944"
+    volumes:
+      - type: bind
+        source: ./shinedme-node/.local
+        target: /root/.local
+  affiliation-worker:
+    build: ./affiliation-worker
+    container_name: affiliation-worker
+    environment:
+    - RABBITMQ_HOST=rabbitmq
+    - BLOCKCHAIN_URL=ws://blockchain:9944
+    depends_on:
+    - rabbitmq
+    - blockchain

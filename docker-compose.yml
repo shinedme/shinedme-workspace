@@ -4,4 +4,18 @@ services:
     image: rabbitmq
     container_name: rabbitmq
     ports:
-        - 5672:5672
+    - 5672:5672
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    hostname: ipfs
+    container_name: ipfs
+    volumes:
+    - "./export:/export"
+    - "./data/ipfs:/data/ipfs"
+    - "./start_ipfs.sh:/start_ipfs.sh"
+    ports:
+    - "5001:5001"
+    - "4001:4001"
+    - "8080:8080"
+    entrypoint: /bin/sh
+    command: /start_ipfs.sh

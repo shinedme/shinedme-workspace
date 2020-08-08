@@ -19,12 +19,3 @@ services:
     - "8080:8080"
     entrypoint: /bin/sh
     command: /start_ipfs.sh
-  affiliation-gateway:
-    build: ./affiliation-gateway
-    container_name: affiliation-gateway
-    environment:
-    - RABBITMQ_HOST=rabbitmq
-    ports:
-    - "5005:5005"
-    depends_on: 
-    - rabbitmq

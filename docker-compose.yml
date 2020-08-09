@@ -11,6 +11,7 @@ services:
     volumes:
     - "./export:/export"
     - "./data/ipfs:/data/ipfs"
+    - "./cors.sh:/cors.sh"
     - "./start_ipfs.sh:/start_ipfs.sh"
     ports:
     - "5001:5001"
@@ -45,3 +46,21 @@ services:
     depends_on:
     - rabbitmq
     - blockchain
+  account-helper:
+    build: ./shinedme-account-helper
+    container_name: account-helper
+    environment:
+    - BLOCKCHAIN_URL=ws://blockchain:9944
+    depends_on:
+    - blockchain
+    ports:
+    - "4000:4000"
+  frontend:
+    build: ./shinedme-frontend
+    container_name: frontend
+    depends_on:
+    - blockchain
+    - ipfs
+    - account-helper
+    ports:
+    - "3000:80"

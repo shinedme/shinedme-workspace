@@ -39,13 +39,14 @@ async function main() {
                         } else if (result.status.isFinalized) {
                             console.log(`Transaction finalized at blockHash ${result.status.asFinalized}`);
                             unsub2();
+                            process.exit(0)
                         } else if (result.status.isInvalid) {
                             console.log(result)
                             process.exit(1)
                         }
                     })
             } else if (result.status.isInvalid) {
-                console.log(result)
+                console.log('already initialized')
                 process.exit(0)
             }
         });

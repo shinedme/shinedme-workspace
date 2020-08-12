@@ -1,15 +1,20 @@
 [submodule "shinedme-node"]
 	path = shinedme-node
 	url = git@github.com:shinedme/shinedme-node.git
+	branch = my-first-substrate-chain
 [submodule "shinedme-account-helper"]
 	path = shinedme-account-helper
 	url = git@github.com:shinedme/shinedme-account-helper.git
+	branch = master
 [submodule "shinedme-frontend"]
 	path = shinedme-frontend
 	url = git@github.com:shinedme/shinedme-frontend.git
+	branch = master
 [submodule "affiliation-gateway"]
 	path = affiliation-gateway
 	url = git@github.com:shinedme/affiliation-gateway.git
+	branch = master
 [submodule "affiliation-worker"]
 	path = affiliation-worker
 	url = git@github.com:shinedme/affiliation-worker.git
+	branch = master

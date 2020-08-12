@@ -55,6 +55,13 @@ services:
     - blockchain
     ports:
     - "4000:4000"
+  # init-node:
+  #   build: ./init-node
+  #   container_name: init-node
+  #   depends_on:
+  #   - blockchain
+  #   environment:
+  #   - BLOCKCHAIN_URL=ws://blockchain:9944
   frontend:
     build: ./shinedme-frontend
     container_name: frontend

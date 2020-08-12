@@ -5,10 +5,11 @@ Aggregate workspace for work with shinedme blockchain node, frontend and helper 
 
 ### Prerequisite:
 - git, GNU make
-- docker-compose 1.25.0 and above
+- docker-compose **1.25.0 and above**
 
+### Steps
 ```
-git submodule --init --recursive
+git submodule update --init --recursive
 make
 docker-compose up
 ```

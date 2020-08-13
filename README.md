@@ -1,13 +1,13 @@
 # shinedme-workspace
 Shinedme is an innovative outfit sharing and affiliation marketing DAPP on polkdadot chain. User can share outfit styles with an optional purchase link, comment, like and edit other people's upload to earn tokens. Tokens are paid by shinedme (as an incentive to usage of the APP) and from third party e-commerce site who are willing to pay an affiliation to attract shinedme users to purchase clothes, shoes or accessories from their shop. Both app user on boarding and decentralized affiliation business user has an intuitive, one-click on boarding and does not require knowledge of blockchain or complicated setup. 
-Besides earn tokens, we originated an interesting OpenCV and machine learning based image editor to tweak and share their thoughts to which part of outfit can be improved. The editor is easy to use and fun. This process is called "shining" and where "shined me" name is from. Currently it only have one editing feature, that is changing clothes color in some user specified range to another color but keep clothes pattern and style. ML model is used to avoid face color been changed mistakely.
+Besides earn tokens, we originated an interesting OpenCV and machine learning based image editor to tweak and share their thoughts to which part of outfit can be improved. The editor is easy to use and fun. This process is called "shining" and where "shined me" name is from. Currently it only have one editing feature, that is changing clothes color in some user specified range to another color but keep clothes pattern and style. ML model is used to avoid face color been changed by mistake.
 
 ## Major features
 - Automatic generate and save Polkadot keypair locally, it's a user friendly one-click onboarding process
 - Upload outfit image and earn token reward
 - Optionally, attach a purchase link and earn additional affiliation reward from a provider when other user later click on the link. The reward is handled and guaranteed by the shinedme pallet as part of blockchain and it's decentralized
 - Comment or like other people's upload and earn token reward
-- Edit other's outfit by changing color of part of clothes in a frontend APP to suggest an alternative outfit. ML model is used to face recorgize and avoid face color is changed by mistake
+- Edit other's outfit by changing color of part of clothes in a frontend APP to suggest an alternative outfit. ML model is used to face recorgization and avoid face color changed by mistake
 - Both uploaded photo and edited photo is saved in IPFS and their CID is indexed in chain
 - Third party store owners can create affiliation and serve as affiliation provider to take advantage of the user base of shinedme. Affiliation payment is authorized and handled in a fully decentralized way by chain.
 - Shinedme also provide a default affiliation reward provider so even at begining of launch user can earn reward from shinedme. The single

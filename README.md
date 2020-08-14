@@ -30,6 +30,7 @@ Besides earning tokens, Shinedme originate an interesting image editor. With thi
 ### Prerequisite:
 - git, GNU make
 - docker-compose **1.25.0 and above**
+- Have a ssh pubkey locally: `~/.ssh/id_rsa.pub`, and add it to your github account
 
 ### Steps
 ```

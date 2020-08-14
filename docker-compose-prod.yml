@@ -1,0 +1,77 @@
+version: '3.2'
+services:
+  rabbitmq:
+    image: rabbitmq
+    container_name: rabbitmq
+    ports:
+    - 5672:5672
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs
+    volumes:
+    - "./export:/export"
+    - "./data/ipfs:/data/ipfs"
+    - "./cors.sh:/cors.sh"
+    - "./start_ipfs.sh:/start_ipfs.sh"
+    ports:
+    - "5001:5001"
+    - "4001:4001"
+    - "8080:8080"
+    entrypoint: /bin/sh
+    command: /start_ipfs.sh
+  affiliation-gateway:
+    build: ./affiliation-gateway
+    container_name: affiliation-gateway
+    environment:
+    - RABBITMQ_HOST=rabbitmq
+    ports:
+    - "5005:5005"
+    depends_on: 
+    - rabbitmq
+  blockchain:
+    container_name: blockchain
+    build: ./shinedme-node
+    ports:
+      - "9944:9944"
+    volumes:
+      - type: bind
+        source: ./shinedme-node/.local
+        target: /root/.local
+  affiliation-worker:
+    build: ./affiliation-worker
+    container_name: affiliation-worker
+    environment:
+    - RABBITMQ_HOST=rabbitmq
+    - BLOCKCHAIN_URL=ws://blockchain:9944
+    depends_on:
+    - rabbitmq
+    - blockchain
+  account-helper:
+    build: ./shinedme-account-helper
+    container_name: account-helper
+    environment:
+    - BLOCKCHAIN_URL=ws://blockchain:9944
+    depends_on:
+    - blockchain
+    ports:
+    - "4000:4000"
+  init-node:
+    build: ./init-node
+    container_name: init-node
+    depends_on:
+    - blockchain
+    environment:
+    - BLOCKCHAIN_URL=ws://blockchain:9944
+  frontend:
+    build: ./shinedme-frontend
+    container_name: frontend
+    depends_on:
+    - blockchain
+    - ipfs
+    - account-helper
+    environment: 
+    - SHINEDME_ACCOUNT_HELPER_HOST=shined.me
+    - SHINEDME_AFFILIATION_GATEWAY_HOST=shined.me
+    - BLOCKCHAIN_URL=ws://shined.me:9944
+    ports:
+    - "3000:80"

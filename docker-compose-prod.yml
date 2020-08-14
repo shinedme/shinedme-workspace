@@ -63,15 +63,13 @@ services:
     environment:
     - BLOCKCHAIN_URL=ws://blockchain:9944
   frontend:
-    build: ./shinedme-frontend
+    build: 
+      context: ./shinedme-frontend
+      dockerfile: prod.Dockerfile
     container_name: frontend
     depends_on:
     - blockchain
     - ipfs
     - account-helper
-    environment: 
-    - SHINEDME_ACCOUNT_HELPER_HOST=shined.me
-    - SHINEDME_AFFILIATION_GATEWAY_HOST=shined.me
-    - BLOCKCHAIN_URL=ws://shined.me:9944
     ports:
     - "3000:80"

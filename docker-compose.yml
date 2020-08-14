@@ -62,12 +62,12 @@ services:
     - blockchain
     environment:
     - BLOCKCHAIN_URL=ws://blockchain:9944
-  # frontend:
-  #   build: ./shinedme-frontend
-  #   container_name: frontend
-  #   depends_on:
-  #   - blockchain
-  #   - ipfs
-  #   - account-helper
-  #   ports:
-  #   - "3000:80"
+  frontend:
+    build: ./shinedme-frontend
+    container_name: frontend
+    depends_on:
+    - blockchain
+    - ipfs
+    - account-helper
+    ports:
+    - "3000:80"

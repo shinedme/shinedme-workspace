@@ -1,6 +1,6 @@
 # Shinedme-workspace
 ## What is Shinedme
-Shinedme is an innovative outfit sharing and affiliation marketing DAPP on polkdadot chain. It's decentralized as data is stored on blockchain or IPFS nodes, the token reward is completely handled by chain and everyone can run a shinedme blockchain node to own their data.
+[Shinedme](https://shined.me) is an innovative outfit sharing and affiliation marketing DAPP on polkdadot chain. It's decentralized as data is stored on blockchain or IPFS nodes, the token reward is completely handled by chain and everyone can run a shinedme blockchain node to own their data.
 
 The process of uploading photos is called "shining" which is the website name "Shinedme" come from. The photo can be very different but Shinedme cuts the final result to be radio of 4:3 (height:width) which gives the best visual effect. 
 Both app user and decentralized affiliation business user has an intuitive, one-click on boarding, which does not require complicated setup process and extra knowledge of blockchain. 
@@ -54,3 +54,32 @@ docker-compose up
   - allow user to backup generated keypair. Keys are not and will not stored on server to be decentralized, but it will be good to ask user to remember 12-word mnenomics and have recover account from 12-word feature.
 
 - At first Shinedme launch, we're not begin with calculating affiliation reward in a decentralized blockchain Amazon or Walmart do not have affiliation program for it. So we simply pay user reward to tokens as reward in a centralized way to attract more user. When Shinedme community starts up and grows larger, we will be eligible to open an affiliation account and make blockchain based reward calculation. 
+
+## Screenshots
+### Browse other people's upload
+![Browse](screenshots/browse.png)
+
+### Change color
+With a big range: both clothes color and bag color changed, face color although similar to clothes didn't change because it's exclude by ML model.
+![change1](screenshots/change1.png)
+With a small range: only clothes color is changed.
+![change2](screenshots/change2.png)
+
+### Create affiliation
+![createaffiliation](screenshots/createaffiliation.png)
+
+### View ideas of a image
+![ideas](screenshots/ideas.png)
+
+### Start page
+![start](screenshots/start.png)
+
+### Profile page
+![profile](screenshots/profilepage.png)
+
+### Upload an outfit with optional affiliation
+![upload](screenshots/upload.png)
+
+### Token paid in a background worker from affiliation
+![pay](screenshots/pay.png)
+

@@ -1,9 +1,8 @@
 # Shinedme-workspace
 ## What is Shinedme
-Shinedme is an innovative outfit sharing and affiliation marketing DAPP on polkdadot chain.
+Shinedme is an innovative outfit sharing and affiliation marketing DAPP on polkdadot chain. It's decentralized as data is stored on blockchain or IPFS nodes, the token reward is completely handled by chain and everyone can run a shinedme blockchain node to own their data.
 
 The process of uploading photos is called "shining" which is the website name "Shinedme" come from. The photo can be very different but Shinedme cuts the final result to be radio of 4:3 (height:width) which gives the best visual effect. 
-optional
 Both app user and decentralized affiliation business user has an intuitive, one-click on boarding, which does not require complicated setup process and extra knowledge of blockchain. 
 
 User can share outfit styles with an optional purchase link, comment, like and edit other user's uploaded outfit to have fun and earn tokens. Tokens are paid by both shinedme (an incentive to sharing the APP to others) and from third party e-commerce site who are willing to pay an affiliation to attract users to purchase clothes, shoes or accessories from their shop. 
